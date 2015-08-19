@@ -1,0 +1,51 @@
+<{include file="../header.html"}>
+<style type="text/css">
+  .content_left{
+    border: 1px solid #e6e6e6; 
+    width: 50px; 
+    line-height:500px; 
+    height: 500px; 
+    font-weight: bolder; 
+    text-align: center;
+    float: left;
+  }
+  .content_right{
+    width: 1000px;
+    height: 500px;
+    border: 1px solid #e6e6e6;
+    float: left;
+  }
+</style>
+  <div class="pageColumn">
+  <div class="pageButton main_info">
+      产品属性设置
+  </div>
+
+  <form action="admin_cproduct_mpro_set_do.html" method="post">
+  <style type="text/css">
+  	.forma{
+  		padding:10px 5px; margin:5px 0; border:1px solid #eee; height:40px; line-height:40px;
+  	}
+  	.forma label{
+  		margin-left:30px;
+  	}
+  </style>
+        <div class="forma">
+        	<label for="type">产品型号：<input type="checkbox" <{if $is_type eq 1}>checked<{/if}>  name="type" id="type"></label>
+        	<label for="price">产品价格：<input type="checkbox"  name="price" <{if $is_price eq 1}>checked<{/if}> id="price"></label>
+        	<label for="keywords">关键字：<input type="checkbox" name="keywords" <{if $is_keywords eq 1}>checked<{/if}> id="keywords"></label>
+        	<label for="parameter">产品参数：<input type="checkbox" name="parameter" <{if $is_parameter eq 1}>checked<{/if}> id="parameter"></label>
+        	<label for="discount">产品折扣：<input type="checkbox" name="discount" <{if $is_discount eq 1}>checked<{/if}> id="discount"></label>
+        	<label for="brand">产品品牌：<input type="checkbox" name="brand" <{if $is_brand eq 1}>checked<{/if}> id="brand"></label>
+        	<label for="producers">产品生产商：<input type="checkbox" name="producers" <{if $is_producers eq 1}>checked<{/if}> id="producers"></label>
+          <label for="pic1">图片一(缩略图)：<input type="checkbox" name="pic1" <{if $is_pic1 eq 1}>checked<{/if}> id="pic1"></label>
+          <label for="pic2">图片二(内容图)：<input type="checkbox" name="pic2" <{if $is_pic2 eq 1}>checked<{/if}> id="pic2"></label>
+        </div>
+        <div class="form1"><input type="submit" value="提交" name="submit">
+        	<input type="reset" value="重置">
+        </div>
+  </form>
+  </div>
+</div>
+</body>
+</html>
