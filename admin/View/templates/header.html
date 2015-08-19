@@ -1,0 +1,35 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title><{$web_title}></title>
+<link href="admin/css/style.css" rel="stylesheet" type="text/css" />
+<!-- kindeditor部分样式和js -->
+<link rel="stylesheet" href="admin/kindeditor/themes/default/default.css" />
+		<script charset="utf-8" src="admin/kindeditor/kindeditor-min.js"></script>
+		<script charset="utf-8" src="admin/kindeditor/lang/zh_CN.js"></script>
+		<script>
+			var editor;
+			KindEditor.ready(function(K) {
+				editor = K.create('textarea[name="content"]', {
+					allowFileManager : true
+				});
+			});
+		</script>
+<!-- kindeditor部分结束 -->
+
+
+
+
+
+
+<style type="text/css">
+body {
+    background:#FFF
+}
+</style>
+</head>
+
+<body>
+<div id="contentWrap">
+  <div class="pageTitle">用户:<{$admin_name}>&nbsp;&nbsp;时间:<{$date}>&nbsp;&nbsp;<{$week}></div>

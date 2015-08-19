@@ -1,0 +1,42 @@
+<{include file="../header.html"}>
+<script type="text/javascript" src="js/admin.js"></script>
+  <div class="pageColumn">
+  <div class="pageButton main_info">
+      人才列表
+      <script type="text/javascript">
+        function sure(id){
+          if(confirm('你确定要删除吗？删除数据不可恢复')){
+            window.location.href="admin_cposition_mpersonel_delete_i"+id+".html";
+          }else{
+            return false;
+          }
+        }
+      </script>
+  </div>
+    <table>
+    </tr>
+    <thead>
+    <th width="25"><input name="" type="checkbox" value="" /></th>
+    <th width="10%">编号</th>
+     <th width="20%">姓名</th>
+      <th width="20%">应聘职位</th>
+      <th width="20%">应聘日期</th>
+      <th width="">操作</th>
+        </thead>
+    <tbody>
+      <{foreach from=$personelInfo item=m}>
+        <tr>
+        <td class="checkBox"><input name="" type="checkbox" value="" /></td>
+        <td><{$m.id}></td>
+        <td><{$m.name}></td>
+        <td><{$m.position_name}></td>
+        <td><{$m.pub_date}></td>
+        <td><span><a href="admin_cposition_mpersonel_info_i<{$m.id}>.html">【详细信息】</a></span><span><a href="admin_cposition_mpersonel_edit_i<{$m.id}>.html">【编辑】</a></span></span><span><a href="javascript:void(0);" onclick="sure('<{$m.id}>');">【删除】</a></span></td>
+      </tr>
+      <{/foreach}>
+    </tbody>
+  </table>
+  </div>
+</div>
+</body>
+</html>

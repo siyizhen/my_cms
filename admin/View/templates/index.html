@@ -1,0 +1,79 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title><{$web_title}></title>
+<link href="admin/css/style.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript">
+$(function(){
+	//setMenuHeight
+	$('.menu').height($(window).height()-51-27-26);
+	$('.sidebar').height($(window).height()-51-27-26);
+	$('.page').height($(window).height()-51-27-26);
+	$('.page iframe').width($(window).width()-15-168);
+	
+	//menu on and off
+	$('.btn').click(function(){
+		$('.menu').toggle();
+		
+		if($(".menu").is(":hidden")){
+			$('.page iframe').width($(window).width()-15+5);
+			}else{
+			$('.page iframe').width($(window).width()-15-168);
+				}
+		});
+		
+	//
+	$('.subMenu a[href="#"]').click(function(){
+		$(this).next('ul').toggle();
+		return false;
+		});
+
+    $("#logout").click(function(){
+        if(confirm("您确定要退出吗？")){
+            return true;
+        }else{
+            return false;
+        }
+    });
+})
+</script>
+
+
+</head>
+
+<body>
+<div id="wrap">
+	<div id="header">
+    <div class="logo fleft"></div>
+    <div class="nav fleft">
+    	<ul>
+        	<div class="nav-left fleft"></div>
+            <li class="first">我的面板</li>
+        	<li>设置</li>
+            <li>模块</li>
+            <li>内容</li>
+            <li>用户</li>
+            <li>扩展</li>
+            <li>应用</li>
+            <div class="nav-right fleft"></div>
+        </ul>
+    </div>
+    <a class="logout fright" href="admin_cadmin_mout.html" id="logout"> </a>
+    <div class="clear"></div>
+    <div class="subnav">
+    	<div class="subnavLeft fleft"></div>
+        <div class="fleft"></div>
+        <div class="subnavRight fright"></div>
+    </div>
+    </div><!--#header -->
+        <{include file="left.html"}>
+    <!--#content -->
+    <div class="clear"></div>
+    <div id="footer"></div><!--#footer -->
+</div><!--#wrap -->
+<div style="text-align:center;">
+</div>
+</body>
+</html>

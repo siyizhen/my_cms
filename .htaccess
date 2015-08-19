@@ -1,0 +1,5 @@
+RewriteEngine On
+RewriteRule ^([a-z]+)\.html$ $1.php
+RewriteRule ^([a-z]+)_c([a-z]+)_m([a-z\_]+)\.html$ $1.php?controller=$2&method=$3
+RewriteRule ^([a-z]+)_c([a-z]+)_m([a-z\_]+)_i([0-9]+)\.html$ $1.php?controller=$2&method=$3&id=$4
+RewriteRule ^([a-z]+)_c([a-z]+)_m([a-z\_]+)_i([0-9]+)_a([a-z]+)\.html$ $1.php?controller=$2&method=$3&id=$4&action=$5
